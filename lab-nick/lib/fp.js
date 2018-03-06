@@ -4,6 +4,7 @@ let array = [1, 2, 3, 4];
 let doubler = (n) => {return 2 * n};
 let result = [];
 
+// forEach
 const forEach = (array, cb) => {
     for(let i = 0; i < array.length; i++) {
         let el = array[i]
@@ -12,11 +13,7 @@ const forEach = (array, cb) => {
 };
 console.log(forEach(array, doubler));
 
-// array.forEach(function(result){
-//     result.push(result)
-// });
-// console.log(result);
-
+// Map
 const map = (array, cb) => {
     let results = [];
     for (let i = 0; i < array.length; i++) {
@@ -28,10 +25,13 @@ const map = (array, cb) => {
 map(array, doubler)
 // console.log(map(array, doubler));
 
+//Filter
 const filter = (array, cb) => {
     return (array, cb);
 };
 
+
+//Reduce
 const reduce = (array, cb) => {
     return (array, cb);
 };
