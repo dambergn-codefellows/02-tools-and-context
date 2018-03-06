@@ -23,23 +23,3 @@ describe('Filter Function', () => {
         expect(filter([1, 2, 3, 4, 5], num => num % 2 === 0)).toEqual([2, 4]);
     });
 });
-
-// describe("add funtion", () => {
-//     it("adds two numbers", () => {
-//         expect (add(3,2)).toBe(5);
-//     });
-//     it("adds two numbers", () => {
-//         expect (add("a",2)).toBe(null);
-//     });
-// });
-
-// describe("greet function", () => {
-//     test("it should return null when input is not a string", () => {
-//         let str = 8;
-//         let expected = null;
-//     })
-//     test("it should return string when input is a string", () => {
-//         let str = "hello world";
-//         let expected = true;
-//     })
-// })
