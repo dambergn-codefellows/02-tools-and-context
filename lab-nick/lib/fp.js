@@ -46,17 +46,13 @@ function add (valA, valB) {
 //Reduce
 function reduce (array, cb, start) {
     let result = start;
-    console.log(result);
-    // array.forEach(item => {
-    //     result = cb.call(undefined, result, item, array);
-    // });
     for (let i = 0; i < array.length; i++) {
         result = cb(result, array[i]);
     }
     return result;
 };
-// console.log(reduce([1, 2, 3, 4, 5]), add(valA, valB), 0); //[15]
-console.log(reduce([1, 2, 3, 4, 5]), (a, b) => a + b, 0); //[15]
+// console.log(reduce([1, 2, 3, 4, 5], (a, b) => a + b, 0)); //[15]
+
 
 
 
