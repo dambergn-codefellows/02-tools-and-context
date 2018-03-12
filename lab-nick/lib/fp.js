@@ -1,43 +1,64 @@
-"use strict";
+'use strict';
 
-let array = [1, 2, 3, 4];
-let doubler = (n) => {return 2 * n};
-let result = [];
-
-const forEach = (array, cb) => {
-    for(let i = 0; i < array.length; i++) {
-        let el = array[i]
-        cb(el)
-    };
-};
-console.log(forEach(array, doubler));
-
-// array.forEach(function(result){
-//     result.push(result)
-// });
-// console.log(result);
-
-const map = (array, cb) => {
-    let results = [];
+// forEach
+function forEach(array, cb) {
+    let result = [];
     for (let i = 0; i < array.length; i++) {
-        let input = cb(array[i], i, array)
-        results.push(input);
+        let input = cb(array[i]);
+        result.push(input);
+    };
+    return result;
+};
+// console.log(forEach([1, 2, 3, 4, 5], num => num * 2));  //[2, 4, 6, 8, 10]
+
+// Map
+function map(array, cb) {
+    let result = [];
+    for (let i = 0; i < array.length; i++) {
+        let input = cb(array[i], i, array);
+        result.push(input);
+    };
+    return result;
+};
+// console.log(map([1, 2, 3, 4, 5], num => num * 2));  //[2, 4, 6, 8, 10]
+
+//Filter
+function filter (array, cb) {
+    let result = [];
+    for (let i = 0; i < array.length; i++) {
+        let input = array[i]
+        if (cb(array[i])) {
+            result.push(input);
+        };
+    };
+    return result;
+};
+// console.log(filter([1, 2, 3, 4, 5], num => num % 2 === 0)); //[2, 4]
+
+//add
+function add (valA, valB) {
+    if (Number.isInteger(valA + valB)) {
+        return (valA + valB);
+      };
+      return null;
+};
+
+//Reduce
+function reduce (array, cb, start) {
+    let result = start;
+    for (let i = 0; i < array.length; i++) {
+        result = cb(result, array[i]);
     }
-    return results;
+    return result;
 };
-map(array, doubler)
-// console.log(map(array, doubler));
+// console.log(reduce([1, 2, 3, 4, 5], (a, b) => a + b, 0)); //[15]
 
-const filter = (array, cb) => {
-    return (array, cb);
-};
 
-const reduce = (array, cb) => {
-    return (array, cb);
-};
+
 
 module.exports = {};
 module.exports.forEach = forEach;
 module.exports.map = map;
 module.exports.filter = filter;
 module.exports.reduce = reduce;
+module.exports.add = add;
